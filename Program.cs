@@ -1,7 +1,9 @@
+using Carter;
 using DotNetEnv;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using SiniestrosVialesOpitech;
 using SiniestrosVialesOpitech.Domain.Options;
 using System;
 using System.Text;
@@ -12,10 +14,16 @@ using System.Text;
 Env.Load();
 #endregion
 
-
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
+// Add services to the container.
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.IncludeFields = true;
+    });
+
 
 builder.Services.AddSwaggerGen(options =>
 {
@@ -79,6 +87,7 @@ builder.Services.Configure<AppSettings>(options =>
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddApplicationServices(configuration);
 builder.Services.AddSwaggerGen();
 #region AuthenticationSetup
 
@@ -105,6 +114,7 @@ builder.Services.AddAuthentication(options =>
 #endregion
 
 var app = builder.Build();
+app.UseStaticFiles();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -112,14 +122,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseRouting();
 app.UseHttpsRedirection();
-
-
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+app.MapCarter();
 
 app.Run();
-
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
