@@ -2,7 +2,7 @@
 
 namespace SiniestrosVialesOpitech.Domain.Entities;
 
-public partial class Departamento
+public partial class Departamentos
 {
     public int IdDepartamento { get; set; }
 
@@ -10,5 +10,5 @@ public partial class Departamento
 
     public string Nombre { get; set; } = null!;
 
-    public virtual ICollection<Municipio> Municipios { get; set; } = new List<Municipio>();
+    public virtual ICollection<Municipios> Municipios { get; set; } = new List<Municipios>();
 }

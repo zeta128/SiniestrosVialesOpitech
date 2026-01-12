@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.IdentityModel.Tokens;
-using SiniestrosVialesOpitech.Application.Common.Wrappers;
+using SiniestrosVialesOpitech.Application.Common.Responses;
 using SiniestrosVialesOpitech.Application.Features.Auth.V1.DTOs;
 using SiniestrosVialesOpitech.Infraestructure.Repositories.Contracts;
 using System.IdentityModel.Tokens.Jwt;
@@ -8,23 +8,23 @@ using System.Security.Claims;
 
 namespace SiniestrosVialesOpitech.Application.Features.Auth.V1.Queries.Handlers
 {
-    public class GetTokenQueryHandler : IRequestHandler<GetTokenQuery, BaseResponse<GetTokenResponse>>
+    public class ObtenerTokenQueryHandler : IRequestHandler<ObtenerTokenQuery, BaseResponse<ObtenerTokenResponse>>
     {
-        private readonly IUnitOfWork unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IConfiguration _configuration;
 
-        public GetTokenQueryHandler(IUnitOfWork unitOfWork, IConfiguration configuration)
+        public ObtenerTokenQueryHandler(IUnitOfWork unitOfWork, IConfiguration configuration)
         {
-            this.unitOfWork = unitOfWork;
+            _unitOfWork = unitOfWork;
             _configuration = configuration;
         }
 
-        public async Task<BaseResponse<GetTokenResponse>> Handle(GetTokenQuery request, CancellationToken cancellationToken)
+        public async Task<BaseResponse<ObtenerTokenResponse>> Handle(ObtenerTokenQuery request, CancellationToken cancellationToken)
         {
-            GetTokenResponse loginResponse = GenerateToken("test");
-            return new BaseResponse<GetTokenResponse>(loginResponse);
+            ObtenerTokenResponse loginResponse = GenerarToken("test");
+            return new BaseResponse<ObtenerTokenResponse>(loginResponse);
         }
-        public GetTokenResponse GenerateToken(string username)
+        public ObtenerTokenResponse GenerarToken(string username)
         {
             var secretKey = _configuration["Jwt:SecretKey"]!;
             var securityKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(secretKey));
@@ -47,7 +47,7 @@ namespace SiniestrosVialesOpitech.Application.Features.Auth.V1.Queries.Handlers
                 signingCredentials: credentials
             );
 
-            return new GetTokenResponse
+            return new ObtenerTokenResponse
             {
                 Token = new JwtSecurityTokenHandler().WriteToken(token),
                 Expiration = token.ValidTo

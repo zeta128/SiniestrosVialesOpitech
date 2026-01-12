@@ -5,9 +5,9 @@ using SiniestrosVialesOpitech.Domain.Entities;
 
 namespace SiniestrosVialesOpitech.Infraestructure.Persistence.Configurations
 {
-    public class VehiculoConfiguration : IEntityTypeConfiguration<Vehiculo>
+    public class VehiculoConfiguration : IEntityTypeConfiguration<Vehiculos>
     {
-        public void Configure(EntityTypeBuilder<Vehiculo> entity)
+        public void Configure(EntityTypeBuilder<Vehiculos> entity)
         {
             entity.HasKey(e => e.IdVehiculo).HasName("PK__Vehiculo__708612150428E236");
             entity.Property(e => e.Activo).HasDefaultValue(true);

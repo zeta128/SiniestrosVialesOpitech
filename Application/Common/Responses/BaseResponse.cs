@@ -1,7 +1,7 @@
 ﻿using SiniestrosVialesOpitech.Domain.Options.Pagination;
 using System.Text.Json.Serialization;
 
-namespace SiniestrosVialesOpitech.Application.Common.Wrappers
+namespace SiniestrosVialesOpitech.Application.Common.Responses
 {
     public class BaseResponse<T>
     {

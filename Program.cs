@@ -5,7 +5,6 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SiniestrosVialesOpitech;
 using SiniestrosVialesOpitech.Domain.Options;
-using System;
 using System.Text;
 
 
@@ -88,6 +87,7 @@ builder.Services.Configure<AppSettings>(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddApplicationServices(configuration);
+builder.Services.AddSiniestrosExceptionServices();
 builder.Services.AddSwaggerGen();
 #region AuthenticationSetup
 
@@ -122,6 +122,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+
 app.UseRouting();
 app.UseHttpsRedirection();
 app.UseAuthentication();

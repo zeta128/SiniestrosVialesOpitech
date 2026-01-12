@@ -1,8 +1,9 @@
 ﻿using Ardalis.Specification;
 using SiniestrosVialesOpitech.Domain.DTOs;
+using SiniestrosVialesOpitech.Domain.Specifications;
 using System.Linq.Expressions;
 
-namespace SiniestrosVialesOpitech.Application.Common.Specifications
+namespace SiniestrosVialesOpitech.Domain.Specifications
 {
     public static class SpecificationExtensions
     {

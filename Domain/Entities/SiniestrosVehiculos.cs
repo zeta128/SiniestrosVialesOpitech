@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 
 namespace SiniestrosVialesOpitech.Domain.Entities;
 
-public partial class SiniestrosVehiculo
+public partial class SiniestrosVehiculos
 {
     public int IdSiniestroVehiculo { get; set; }
 
@@ -13,7 +12,7 @@ public partial class SiniestrosVehiculo
 
     public string? RolVehiculo { get; set; }
 
-    public virtual Siniestro IdSiniestroNavigation { get; set; } = null!;
+    public virtual Siniestros IdSiniestroNavigation { get; set; } = null!;
 
-    public virtual Vehiculo IdVehiculoNavigation { get; set; } = null!;
+    public virtual Vehiculos IdVehiculoNavigation { get; set; } = null!;
 }

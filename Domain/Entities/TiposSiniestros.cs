@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 
 namespace SiniestrosVialesOpitech.Domain.Entities;
 
-public partial class TiposSiniestro
+public partial class TiposSiniestros
 {
     public int IdTipoSiniestro { get; set; }
 
@@ -15,5 +14,5 @@ public partial class TiposSiniestro
 
     public bool Activo { get; set; }
 
-    public virtual ICollection<Siniestro> Siniestros { get; set; } = new List<Siniestro>();
+    public virtual ICollection<Siniestros> Siniestros { get; set; } = new List<Siniestros>();
 }
