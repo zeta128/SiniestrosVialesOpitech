@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.IdentityModel.Tokens;
 using SiniestrosVialesOpitech.Application.Common.Responses;
-using SiniestrosVialesOpitech.Application.Features.Auth.V1.DTOs;
+using SiniestrosVialesOpitech.Domain.DTOs;
 using SiniestrosVialesOpitech.Infraestructure.Repositories.Contracts;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;

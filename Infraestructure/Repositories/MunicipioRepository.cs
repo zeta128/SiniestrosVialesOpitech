@@ -10,10 +10,15 @@ namespace SiniestrosVialesOpitech.Infraestructure.Repositories
         public async Task<bool> ExisteMunicipioPorIdAsync(int idMunicipio)
         {
             return await siniestrosVialesReadContext.Set<Municipios>()
-                //.AsNoTracking()
+                .AsNoTracking()
                 .AnyAsync(m => m.IdMunicipio == idMunicipio);
         }
-
+        public async Task<Municipios?> ObtenerMunicipioPorId(int idMunicipio)
+        {
+            return await siniestrosVialesReadContext.Set<Municipios>()
+                .Where(m => m.IdMunicipio == idMunicipio)
+                .FirstOrDefaultAsync();
+        }
 
     }
 }

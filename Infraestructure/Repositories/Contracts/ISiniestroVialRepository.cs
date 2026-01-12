@@ -1,11 +1,13 @@
-﻿using SiniestrosVialesOpitech.Domain.Entities;
-using SiniestrosVialesOpitech.Domain.Specifications;
+﻿using Ardalis.Specification;
+using SiniestrosVialesOpitech.Domain.Entities;
+
 
 namespace SiniestrosVialesOpitech.Infraestructure.Repositories.Contracts
 {
     public interface ISiniestroVialRepository
     {
         Task CrearSiniestroVialAsync(Siniestros siniestroVial);
-        Task<List<Siniestros>> ObtenerSiniestroVialPorSpecAsync(GenericSpecification<Siniestros> genericSpecification);
+        Task<List<Siniestros>> ObtenerSiniestroVialPorSpecAsync(ISpecification<Siniestros> genericSpecification);
+        Task<int> CountBySpecAsync(ISpecification<Siniestros> siniestrosSpecification);
     }
 }

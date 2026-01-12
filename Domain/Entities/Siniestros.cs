@@ -21,9 +21,9 @@ public partial class Siniestros
 
     public DateTime FechaRegistro { get; set; }
 
-    public virtual Municipios IdMunicipioNavigation { get; set; } = null!;
+    public virtual Municipios MunicipioNavigation { get; set; } = null!;
 
-    public virtual TiposSiniestros IdTipoSiniestroNavigation { get; set; } = null!;
+    public virtual TiposSiniestros TipoSiniestroNavigation { get; set; } = null!;
 
     public virtual ICollection<SiniestrosVehiculos> SiniestrosVehiculos { get; set; } = new List<SiniestrosVehiculos>();
 
@@ -44,7 +44,7 @@ public partial class Siniestros
         NumeroVictimas = numeroVictimas;
         Descripcion = descripcion;
     }
-    #region Crear Siniestro Simple
+    #region Registrar Siniestro Simple
     public static Siniestros CrearSiniestroSimple(
         DateTime fecha,
         int idMunicipio,

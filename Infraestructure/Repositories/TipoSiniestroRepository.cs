@@ -15,5 +15,13 @@ namespace SiniestrosVialesOpitech.Infraestructure.Repositories
                 .AnyAsync(m => m.IdTipoSiniestro == idTipoSiniestro);
         }
 
+        public async Task<TiposSiniestros?> ObtenerTipoSiniestroPorIdAsync(int idTipoSiniestro)
+        {
+            return await siniestrosVialesReadContext.Set<TiposSiniestros>()
+                .Where(ts => ts.IdTipoSiniestro == idTipoSiniestro)
+                .FirstOrDefaultAsync();
+                
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SiniestrosVialesOpitech.Application.Features.Auth.V1.DTOs
+﻿namespace SiniestrosVialesOpitech.Domain.DTOs
 {
     public class ObtenerTokenResponse
     {

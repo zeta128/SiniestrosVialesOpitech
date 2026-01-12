@@ -14,9 +14,9 @@ public partial class SiniestrosVictimas
 
     public string? RolVictima { get; set; }
 
-    public virtual Siniestros IdSiniestroNavigation { get; set; } = null!;
+    public virtual Siniestros SiniestroNavigation { get; set; } = null!;
 
-    public virtual Vehiculos? IdVehiculoNavigation { get; set; }
+    public virtual Vehiculos? VehiculoNavigation { get; set; }
 
-    public virtual Victimas IdVictimaNavigation { get; set; } = null!;
+    public virtual Victimas VictimaNavigation { get; set; } = null!;
 }

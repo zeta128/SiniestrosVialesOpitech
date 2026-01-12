@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using SiniestrosVialesOpitech.Application.Common.Responses;
-using SiniestrosVialesOpitech.Application.Features.Auth.V1.DTOs;
+using SiniestrosVialesOpitech.Domain.DTOs;
 
 
 namespace SiniestrosVialesOpitech.Application.Features.Auth.V1.Queries

@@ -14,6 +14,7 @@
     <PackageReference Include="Carter" Version="8.0.0" />
     <PackageReference Include="DotNetEnv" Version="3.1.1" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+    <PackageReference Include="Mapster" Version="7.4.0" />
     <PackageReference Include="MediatR" Version="14.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.22" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.10" />
@@ -26,9 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\Specifications\SiniestrosViales\" />
     <Folder Include="Application\Features\SiniestrosViales\V1\DTOs\" />
-    <Folder Include="Application\Features\SiniestrosViales\V1\Queries\Handlers\" />
   </ItemGroup>
 
 </Project>

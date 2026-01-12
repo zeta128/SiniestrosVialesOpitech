@@ -43,12 +43,19 @@ namespace SiniestrosVialesOpitech
 
             
             services.AddScoped<IResourceMessagesService, ResourceMessagesService>();
+
             #region Repositories
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ISiniestroVialRepository, SiniestroVialRepository>();
+            services.AddScoped<ISiniestroVictimaRepository, SiniestroVictimaRepository>();
+            services.AddScoped<ISiniestroVehiculoRepository, SiniestroVehiculoRepository>();
             services.AddScoped<IMunicipioRepository, MunicipioRepository>();
+            services.AddScoped<IDepartamentoRepository, DepartamentoRepository>();
             services.AddScoped<ITipoSiniestroRepository, TipoSiniestroRepository>();
+            services.AddScoped<IVehiculoRepository, VehiculoRepository>();
+            services.AddScoped<IVictimaRepository, VictimaRepository>();
             #endregion
+
             services.AddMediatR(c => c.RegisterServicesFromAssembly(assembly));
             services.AddCarter();
             

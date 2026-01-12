@@ -17,16 +17,16 @@ namespace SiniestrosVialesOpitech.Infraestructure.Persistence.Configurations
 
             entity.Property(e => e.RolVictima).HasMaxLength(50);
 
-            entity.HasOne(d => d.IdSiniestroNavigation).WithMany(p => p.SiniestrosVictimas)
+            entity.HasOne(d => d.SiniestroNavigation).WithMany(p => p.SiniestrosVictimas)
                 .HasForeignKey(d => d.IdSiniestro)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_SVIC_Siniestros");
 
-            entity.HasOne(d => d.IdVehiculoNavigation).WithMany(p => p.SiniestrosVictimas)
+            entity.HasOne(d => d.VehiculoNavigation).WithMany(p => p.SiniestrosVictimas)
                 .HasForeignKey(d => d.IdVehiculo)
                 .HasConstraintName("FK_SVIC_Vehiculos");
 
-            entity.HasOne(d => d.IdVictimaNavigation).WithMany(p => p.SiniestrosVictimas)
+            entity.HasOne(d => d.VictimaNavigation).WithMany(p => p.SiniestrosVictimas)
                 .HasForeignKey(d => d.IdVictima)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_SVIC_Victimas");

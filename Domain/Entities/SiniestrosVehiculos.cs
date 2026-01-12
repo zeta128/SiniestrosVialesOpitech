@@ -12,7 +12,7 @@ public partial class SiniestrosVehiculos
 
     public string? RolVehiculo { get; set; }
 
-    public virtual Siniestros IdSiniestroNavigation { get; set; } = null!;
+    public virtual Siniestros SiniestroNavigation { get; set; } = null!;
 
-    public virtual Vehiculos IdVehiculoNavigation { get; set; } = null!;
+    public virtual Vehiculos VehiculoNavigation { get; set; } = null!;
 }

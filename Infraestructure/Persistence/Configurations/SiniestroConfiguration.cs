@@ -14,12 +14,12 @@ namespace SiniestrosVialesOpitech.Infraestructure.Persistence.Configurations
             entity.Property(e => e.Descripcion).HasMaxLength(500);
             entity.Property(e => e.FechaRegistro).HasDefaultValueSql("(sysdatetime())");
 
-            entity.HasOne(d => d.IdMunicipioNavigation).WithMany(p => p.Siniestros)
+            entity.HasOne(d => d.MunicipioNavigation).WithMany(p => p.Siniestros)
                 .HasForeignKey(d => d.IdMunicipio)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Siniestros_Municipios");
 
-            entity.HasOne(d => d.IdTipoSiniestroNavigation).WithMany(p => p.Siniestros)
+            entity.HasOne(d => d.TipoSiniestroNavigation).WithMany(p => p.Siniestros)
                 .HasForeignKey(d => d.IdTipoSiniestro)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Siniestros_Tipos");
