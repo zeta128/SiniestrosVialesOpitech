@@ -32,7 +32,7 @@ La solución implementa una combinación de:
 
 ## 🧱 Estructura del proyecto
 
-```text
+
 src/
  ├── SiniestrosViales.Domain
  │    ├── Entities
@@ -60,6 +60,12 @@ Pasos de ejecución
 -Ejecutar los scripts de base de datos asociados
 -Ejecutar git clone https://github.com/tu-usuario/siniestros-viales-api.git
 cd siniestros-viales-api
+La conexión con base de datos se realiza desde el archivo .env por lo que el nombre del server se debe ajustar desde allí 
+src/
+
+ └── .env
+
+
 dotnet restore
 dotnet run --project src/SiniestrosViales.API
 
