@@ -53,5 +53,14 @@ src/
  
  │
  └── Program.cs
- └── .enviado desde 
+ └── .env
+
+Pasos de ejecución
+
+-Ejecutar los scripts de base de datos asociados
+-Ejecutar git clone https://github.com/tu-usuario/siniestros-viales-api.git
+cd siniestros-viales-api
+dotnet restore
+dotnet run --project src/SiniestrosViales.API
+
  
