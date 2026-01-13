@@ -37,6 +37,7 @@ src/
  ├── SiniestrosViales.Domain
  │    ├── Entities
  │    ├── ValueObjects
+ │    ├── Aggregates
  │    └── Specifications
  │
  ├── SiniestrosViales.Application
@@ -50,7 +51,6 @@ src/
  ├── SiniestrosViales.Infrastructure
  │    ├── Persistence
  │    ├── Repositories
- 
  │
  └── Program.cs
  └── .env
