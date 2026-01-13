@@ -62,7 +62,7 @@ Pasos de ejecución
 cd siniestros-viales-api
 La conexión con base de datos se realiza desde el archivo .env por lo que el nombre del server se debe ajustar desde allí
 
-```text
+
 
 src/
 
